@@ -1,0 +1,47 @@
+## Background and Rationale
+Understanding the complex association between sleep problems and lifestyle factors such as physical activity, smoking status, alcohol use, and drug use is critical for supporting effective sleep health interventions. While sleep disorders have traditionally garnered significant attention in the field of sleep medicine, understanding how lifestyle choices influence sleep patterns is critical for a comprehensive approach to sleep health promotion.
+
+## Study Aims
+
+### Primary Study Aim
+To investigate the significance of the relationship between physical activity levels and sleep quality.
+
+### Secondary Study Aims
+1. To evaluate the effect of smoking status on objective sleep quality.
+2. To investigate the relationship between alcohol consumption and sleep disruption.
+3. To analyze the association between drug use and sleep patterns.
+
+## Study Hypotheses
+### Primary Outcome
+**Null Hypothesis (H0):** There is no significant association between physical activity levels and sleep quality.\
+**Alternative Hypothesis (H1):** Higher physical activity levels are associated with better sleep quality and fewer sleep disturbances.
+
+## Secondary Outcomes
+### Smoking Status:
+**Null Hypothesis (H0):** There is no significant difference in objective sleep quality between smokers and non-smokers.\
+**Alternative Hypothesis (H1):** Smokers exhibit poorer objective sleep quality compared to non-smokers.
+
+### Alcohol Consumption:
+**Null Hypothesis (H0):** There is no significant relationship between alcohol consumption and sleep disruption.\
+**Alternative Hypothesis (H1):** Increased alcohol consumption is correlated with a higher frequency of sleep disruption.
+
+### Drug Use:
+**Null Hypothesis (H0):** There is no significant association between drug use and sleep patterns.\
+**Alternative Hypothesis (H1):** Individuals with drug usage experience more sleep disturbances compared to non-users.
+
+## Data Extraction and Analysis Plan
+### Study Cohort Definitions
+**Inclusion Criteria:** Adults aged 18 and above with complete data on sleep parameters, physical activity levels, smoking status, alcohol use, and drug usage.\
+**Exclusion Criteria:** Pregnant individuals due to potential changes in sleep duration.
+
+## Analyses to perform
+### Descriptive Statistics of Baseline Parameters:
+Age, gender, BMI, physical activity levels, smoking status, alcohol consumption, drug usage, sleep duration, sleep troubles
+
+### Statistical Analysis:
+
+1. Z-test for comparing proportions (e.g., smoking status between groups).
+2. T-test for comparing means (e.g., physical activity levels between groups).
+3. Correlation analysis to explore associations between lifestyle factors and sleep parameters.
+4. Regression analysis to identify predictors of sleep disturbances.
+

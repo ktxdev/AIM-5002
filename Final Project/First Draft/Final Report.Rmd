@@ -12,14 +12,14 @@ knitr::opts_chunk$set(echo = TRUE)
 ## Background
 Understanding the association between sleep trouble and lifestyle factors such as physical activity levels, smoking status, alcohol consumption, and drug use is crucial for comprehensively addressing sleep health. While quality sleep is essential for overall well-being, research suggests that lifestyle choices may significantly impact sleep patterns (Shochat, T., 2012). Historically, the field of sleep medicine has predominantly focused on defining, identifying, and treating sleep disorders (Buysse, D. J, 2014). However, to fully grasp the complexities of sleep health, it is imperative to analyze how lifestyle factors interact with sleep patterns. By examining the relationship between sleep trouble and various lifestyle elements, including physical activity, smoking habits, alcohol consumption, and drug use, researchers can gain insights into holistic approaches for promoting better sleep quality and overall wellness.
 
-This study seeks to evaluate the complex association between sleep problems and lifestyle factors, with an emphasis on physical activity levels, smoking status, alcohol use, and drug usage. We plan to investigate how these lifestyle activities influence sleep patterns and contribute to sleep disruptions by collecting and analyzing extensive data.
+This study aims to evaluate the impact of physical activity levels on sleep problems while also accounting for the influence of other lifestyle habits such as smoking status, drug and alcohol use. By studying NHANES data, we hope to learn how these lifestyle activities influence sleep patterns and contribute to sleep disruptions.
 
 ## Methods
 ### Data
 This study utilizes data from the National Health and Nutrition Examination Survey (NHANES), a cross-sectional survey conducted by the National Center for Health Statistics (NCHS) to assess the health and nutritional status of civilians in the United States. 
 
 ### Study Sample
-The study includes adults over the age of 18 with complete data on sleep parameters, physical activity levels, smoking status, alcohol use, and drug usage. Participants who were pregnant were excluded due to changes in sleep duration (S. Wang et al., 2022).
+The study includes adults over the age of 18 with complete data on sleep parameters, physical activity levels, smoking status, alcohol use, and drug usage. Participants who were pregnant were omitted because, according to S. Wang et al. (2022), pregnancies have an impact on sleep duration.
 
 ## Results
 The study's projected findings could reveal significant connections between sleep problems and a variety of lifestyle characteristics, such as physical activity levels, smoking status, alcohol use, and drug usage. Specifically:
@@ -29,8 +29,8 @@ The study's projected findings could reveal significant connections between slee
 **Smoking Status:** Smokers have a decreased objective sleep quality than non-smokers or never smokers (Truong, M. K. et al., 2021). Nicotine dependence and withdrawal symptoms may contribute to disrupted sleep patterns among smokers.\
 
 **Drug Use & Alcohol Consumption:** A high frequency of sleep disruption may occur to individuals with substance use. Specifically, insomnia appears to be more prevalent among alcohol users, while hypersomnolence is more common among smokers (Phiri, D., et  al., 2023).
-Discussion & Conclusions\
 
+## Discussion & Conclusions
 Overall, the expected findings indicate that lifestyle factors play an important role in determining sleep health. Understanding the links between sleep problems and other lifestyle choices can help guide focused interventions for increasing sleep quality and general well-being. Furthermore, identifying modifiable lifestyle factors related with sleep disruptions may open up possibilities for preventative actions and health promotion programs.
 
 ## References
