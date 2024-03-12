@@ -7,6 +7,7 @@ output: html_document
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+library(pROC)
 ```
 
 ## Building the Dataset
@@ -14,7 +15,7 @@ Creating a simulated dataset called df. It has 649 rows, each representing a pat
 
 A new column, SUN_Diag, is introduced to the dataset and is initially filled with NA. The values for SUN_Diag are then generated using different probabilities based on the EGFR30 results. Finally, SUN_Diag is turned into a factor.
 
-```{r}
+```{r message = FALSE, warning = FALSE}
 df <- data.frame('PATIENT_ID' = 1:649, "EGFR30" = rbinom(649, 1, 0.177)) 
 df$EGFR30 <- factor(df$EGFR30)
 
@@ -22,11 +23,15 @@ df$SUN_Diag <- NA
 df$SUN_Diag[df$EGFR30 == 0] <- rbinom(length(df$EGFR30[df$EGFR30 == 0]), 1, (1 - 0.846))
 df$SUN_Diag[df$EGFR30==1] <- rbinom(length(df$EGFR30[df$EGFR30==1]), 1, 0.661)
 df$SUN_Diag <- factor(df$SUN_Diag)
+
+df$SUN <- 1
+df$SUN[df$SUN_Diag == 1] <- sample(2:6, replace = TRUE, size = length(df$SUN[df$SUN_Diag == 1]))
+df$SUN<-factor(df$SUN)
 ```
 
 ## Defining TP, FP, TN and FN, and building them into factors 
 A new column. Diag_Cat is added to the dataset and initialized with NA values. Diagnostic classifications (TP, TN, FN, and FP) are assigned for conditions involving EGFR30 and SUN_Diag. Diag_Cat is then turned into a factor.
-```{r}
+```{r message = FALSE, warning = FALSE}
 df$Diag_Cat <- NA
 df$Diag_Cat[df$EGFR30 == 1 & df$SUN_Diag == 1]<-"TP"
 df$Diag_Cat[df$EGFR30 == 0 & df$SUN_Diag == 0]<-"TN"
@@ -36,7 +41,7 @@ df$Diag_Cat_Factor <- factor(df$Diag_Cat)
 ```
 ## Calculating sensitivity, specificity and predictive values. 
 This code calculates sensitivity (sens), specificity (spec), positive predictive value (PPV), and negative predictive value (NPV) based on the counts of the diagnostic categories.
-```{r}
+```{r message = FALSE, warning = FALSE}
 TP <- length(df$Diag_Cat_Factor[df$Diag_Cat_Factor=="TP"])
 TP <- summary(df$Diag_Cat_Factor)[4]
 sens <- as.numeric(summary(df$Diag_Cat_Factor)[4] / sum(summary(df$Diag_Cat_Factor)[c(1,4)]))
@@ -46,7 +51,44 @@ NPV <- as.numeric(summary(df$Diag_Cat_Factor)[3] / sum(summary(df$Diag_Cat_Facto
 ```
 ## Building a ROC curve and providing the AUC with Cis. 
 This line creates the ROC curve with the roc() function from the pROC package. It uses EGFR30 == 1 as the actual class label (positive) and SUN as the predictor. Additional arguments are included for calculating the area under the curve (AUC), confidence intervals (CI), and plotting the curve.
-```{r}
-roc(df$EGFR30==1 ,as.numeric(df$SUN),auc=TRUE, ci=TRUE, plot=TRUE)
+```{r message = FALSE, warning = FALSE}
+roc(df$EGFR30 == 1 , as.numeric(df$SUN), auc = TRUE, ci = TRUE, plot = TRUE)
+```
+
+## Repeating the exercise for the criterion eGFR<15 mL/min/1.73m^2
+```{r message = FALSE, warning = FALSE}
+# Simulating the Dataset
+df2 <- data.frame('PATIENT_ID' = 1:649, "EGFR15" = rbinom(649, 1, 0.096)) 
+
+# Converting EGFR15 to a factor
+df2$EGFR15 <- factor(df2$EGFR15)
+
+# Generating Sun_Diag using different probabilities based on the EGFR15 results
+df2$SUN_Diag <- NA
+df2$SUN_Diag[df2$EGFR15 == 0] <- rbinom(length(df2$EGFR15[df2$EGFR15 == 0]), 1, (1 - 0.818))
+df2$SUN_Diag[df2$EGFR15 == 1] <- rbinom(length(df2$EGFR15[df2$EGFR15==1]), 1, 0.823)
+df2$SUN_Diag <- factor(df2$SUN_Diag)
+
+df2$SUN <- 1
+df2$SUN[df2$SUN_Diag == 1] <- sample(2:6, replace = TRUE, size = length(df2$SUN[df2$SUN_Diag == 1]))
+df2$SUN<-factor(df2$SUN)
+
+# Assigning diagnostic classifications (TP, TN, FN, and FP) for conditions involving EGFR15 and SUN_Diag
+df2$Diag_Cat <- NA
+df2$Diag_Cat[df2$EGFR15 == 1 & df2$SUN_Diag == 1]<-"TP"
+df2$Diag_Cat[df2$EGFR15 == 0 & df2$SUN_Diag == 0]<-"TN"
+df2$Diag_Cat[df2$EGFR15 == 1 & df2$SUN_Diag == 0]<-"FN"
+df2$Diag_Cat[df2$EGFR15 == 0 & df2$SUN_Diag == 1]<-"FP"
+df2$Diag_Cat_Factor <- factor(df2$Diag_Cat)
+
+# Calculating sensitivity, specificity and predictive values. 
+TP <- length(df2$Diag_Cat_Factor[df2$Diag_Cat_Factor=="TP"])
+TP <- summary(df2$Diag_Cat_Factor)[4]
+sens <- as.numeric(summary(df2$Diag_Cat_Factor)[4] / sum(summary(df2$Diag_Cat_Factor)[c(1,4)]))
+spec <- as.numeric(summary(df2$Diag_Cat_Factor)[3] / sum(summary(df2$Diag_Cat_Factor)[c(3,2)]))
+PPV <- as.numeric(summary(df2$Diag_Cat_Factor)[4] / sum(summary(df2$Diag_Cat_Factor)[c(2,4)]))
+NPV <- as.numeric(summary(df2$Diag_Cat_Factor)[3] / sum(summary(df2$Diag_Cat_Factor)[c(3,1)]))
+
+roc(df2$EGFR15 == 1 , as.numeric(df2$SUN), auc = TRUE, ci = TRUE, plot = TRUE)
 ```
 
