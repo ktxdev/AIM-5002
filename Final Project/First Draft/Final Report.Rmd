@@ -1,0 +1,42 @@
+---
+title: "Final Report"
+author: "Sean Huvaya"
+date: "2024-03-11"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Background
+Understanding the association between sleep trouble and lifestyle factors such as physical activity levels, smoking status, alcohol consumption, and drug use is crucial for comprehensively addressing sleep health. While quality sleep is essential for overall well-being, research suggests that lifestyle choices may significantly impact sleep patterns (Shochat, T., 2012). Historically, the field of sleep medicine has predominantly focused on defining, identifying, and treating sleep disorders (Buysse, D. J, 2014). However, to fully grasp the complexities of sleep health, it is imperative to analyze how lifestyle factors interact with sleep patterns. By examining the relationship between sleep trouble and various lifestyle elements, including physical activity, smoking habits, alcohol consumption, and drug use, researchers can gain insights into holistic approaches for promoting better sleep quality and overall wellness.
+
+This study seeks to evaluate the complex association between sleep problems and lifestyle factors, with an emphasis on physical activity levels, smoking status, alcohol use, and drug usage. We plan to investigate how these lifestyle activities influence sleep patterns and contribute to sleep disruptions by collecting and analyzing extensive data.
+
+## Methods
+### Data
+This study utilizes data from the National Health and Nutrition Examination Survey (NHANES), a cross-sectional survey conducted by the National Center for Health Statistics (NCHS) to assess the health and nutritional status of civilians in the United States. 
+
+### Study Sample
+The study includes adults over the age of 18 with complete data on sleep parameters, physical activity levels, smoking status, alcohol use, and drug usage. Participants who were pregnant were excluded due to changes in sleep duration (S. Wang et al., 2022).
+
+## Results
+The study's projected findings could reveal significant connections between sleep problems and a variety of lifestyle characteristics, such as physical activity levels, smoking status, alcohol use, and drug usage. Specifically:
+
+**Physical Activity Levels:** Higher levels of physical exercise may be linked to higher sleep quality and fewer sleep disruptions (Sherrill, D. L., et al, 1998). People who engage in regular physical activity may have a shorter sleep onset latency and a longer sleep duration than those who lead sedentary lifestyles.\
+
+**Smoking Status:** Smokers have a decreased objective sleep quality than non-smokers or never smokers (Truong, M. K. et al., 2021). Nicotine dependence and withdrawal symptoms may contribute to disrupted sleep patterns among smokers.\
+
+**Drug Use & Alcohol Consumption:** A high frequency of sleep disruption may occur to individuals with substance use. Specifically, insomnia appears to be more prevalent among alcohol users, while hypersomnolence is more common among smokers (Phiri, D., et  al., 2023).
+Discussion & Conclusions\
+
+Overall, the expected findings indicate that lifestyle factors play an important role in determining sleep health. Understanding the links between sleep problems and other lifestyle choices can help guide focused interventions for increasing sleep quality and general well-being. Furthermore, identifying modifiable lifestyle factors related with sleep disruptions may open up possibilities for preventative actions and health promotion programs.
+
+## References
+- Buysse, D. J. (01 2014). Sleep Health: Can We Define It? Does It Matter? Sleep, 37(1), 9–17. doi:10.5665/sleep.3298
+- Shochat, T. (2012). Impact of lifestyle and technology developments on sleep. Nature and Science of Sleep, 4, 19–31. doi:10.2147/NSS.S18891
+- Wang, S., Rossheim, M. E., & Nandy, R. R. (09 2022). Trends in prevalence of short sleep duration and trouble sleeping among US adults, 2005–2018. Sleep, 46(1), zsac231. doi:10.1093/sleep/zsac231
+- Sherrill, D. L., Kotchou, K., & Quan, S. F. (09 1998). Association of Physical Activity and Human Sleep Disorders. Archives of Internal Medicine, 158(17), 1894–1898. doi:10.1001/archinte.158.17.1894
+- Truong, M. K., Berger, M., Haba-Rubio, J., Siclari, F., Marques-Vidal, P., & Heinzer, R. (2021). Impact of smoking on sleep macro– and microstructure. Sleep Medicine, 84, 86–92. doi:10.1016/j.sleep.2021.05.024
+- Phiri, D., Amelia, V. L., Muslih, M., Dlamini, L. P., Chung, M.-H., & Chang, P.-C. (2023). Prevalence of sleep disturbance among adolescents with substance use: a systematic review and meta-analysis. Child & Adolescent Psychiatry & Mental Health, 17(1), 1–14. Retrieved from https://ezproxy.yu.edu/login?url=https://search.ebscohost.com/login.aspx?direct=true&amp;AuthType=ip,sso&amp;db=a9h&amp;AN=170716682&amp;site=eds-live&amp;scope=site
