@@ -9,4 +9,38 @@ output: html_document
 library(pwr)
 ```
 
+### Planned RCT sample sizes needed (sig level of 0.05; type =two- sided) to detect a difference with a power of 90% under the assumption of:
+#### a)	a small effect size (0.2)
+```{r}
+pwr.t.test(power = 0.9, d = 0.2, sig.level = .05)
+```
 
+#### b)	a medium effect size (0.5)
+```{r}
+pwr.t.test(power = 0.9, d = 0.5, sig.level = .05)
+```
+#### c)	a large effect size (0.8).
+```{r}
+pwr.t.test(power = 0.9, d = 0.8, sig.level = .05)
+```
+#### d) The power at large effect size when 36 subjects are enrolled
+```{r}
+pwr.t.test(n = 36, d = 0.8, sig.level = .05)
+```
+### The sample sizes needed within each group when comparing 5 groups using a one-way ANOVA in a planned RCT (sig level of 0.05) aiming for a power of 90% with:
+#### a) a small effect size (0.2)
+```{r}
+pwr.anova.test(k = 5, sig.level = .05, f = 0.2, power = 0.9)
+```
+#### b) a medium effect size (0.5)
+```{r}
+pwr.anova.test(k = 5, sig.level = .05, f = 0.5, power = 0.9)
+```
+#### c) a large effect size (0.8)
+```{r}
+pwr.anova.test(k = 5, sig.level = .05, f = 0.8, power = 0.9)
+```
+#### d) Tthe power when 40 subjects are enrolled?
+```{r}
+pwr.anova.test(n = 8, f = 0.8, sig.level = 0.05, k = 5)
+```

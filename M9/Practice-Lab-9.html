@@ -357,7 +357,128 @@ display: none;
 </div>
 
 
-
+<div id="planned-rct-sample-sizes-needed-sig-level-of-0.05-type-two--sided-to-detect-a-difference-with-a-power-of-90-under-the-assumption-of" class="section level3">
+<h3>Planned RCT sample sizes needed (sig level of 0.05; type =two-
+sided) to detect a difference with a power of 90% under the assumption
+of:</h3>
+<div id="a-a-small-effect-size-0.2" class="section level4">
+<h4>a) a small effect size (0.2)</h4>
+<pre class="r"><code>pwr.t.test(power = 0.9, d = 0.2, sig.level = .05)</code></pre>
+<pre><code>## 
+##      Two-sample t test power calculation 
+## 
+##               n = 526.3332
+##               d = 0.2
+##       sig.level = 0.05
+##           power = 0.9
+##     alternative = two.sided
+## 
+## NOTE: n is number in *each* group</code></pre>
+</div>
+<div id="b-a-medium-effect-size-0.5" class="section level4">
+<h4>b) a medium effect size (0.5)</h4>
+<pre class="r"><code>pwr.t.test(power = 0.9, d = 0.5, sig.level = .05)</code></pre>
+<pre><code>## 
+##      Two-sample t test power calculation 
+## 
+##               n = 85.03128
+##               d = 0.5
+##       sig.level = 0.05
+##           power = 0.9
+##     alternative = two.sided
+## 
+## NOTE: n is number in *each* group</code></pre>
+</div>
+<div id="c-a-large-effect-size-0.8." class="section level4">
+<h4>c) a large effect size (0.8).</h4>
+<pre class="r"><code>pwr.t.test(power = 0.9, d = 0.8, sig.level = .05)</code></pre>
+<pre><code>## 
+##      Two-sample t test power calculation 
+## 
+##               n = 33.82555
+##               d = 0.8
+##       sig.level = 0.05
+##           power = 0.9
+##     alternative = two.sided
+## 
+## NOTE: n is number in *each* group</code></pre>
+</div>
+<div id="d-the-power-at-large-effect-size-when-36-subjects-are-enrolled" class="section level4">
+<h4>d) The power at large effect size when 36 subjects are enrolled</h4>
+<pre class="r"><code>pwr.t.test(n = 36, d = 0.8, sig.level = .05)</code></pre>
+<pre><code>## 
+##      Two-sample t test power calculation 
+## 
+##               n = 36
+##               d = 0.8
+##       sig.level = 0.05
+##           power = 0.9173135
+##     alternative = two.sided
+## 
+## NOTE: n is number in *each* group</code></pre>
+</div>
+</div>
+<div id="the-sample-sizes-needed-within-each-group-when-comparing-5-groups-using-a-one-way-anova-in-a-planned-rct-sig-level-of-0.05-aiming-for-a-power-of-90-with" class="section level3">
+<h3>The sample sizes needed within each group when comparing 5 groups
+using a one-way ANOVA in a planned RCT (sig level of 0.05) aiming for a
+power of 90% with:</h3>
+<div id="a-a-small-effect-size-0.2-1" class="section level4">
+<h4>a) a small effect size (0.2)</h4>
+<pre class="r"><code>pwr.anova.test(k = 5, sig.level = .05, f = 0.2, power = 0.9)</code></pre>
+<pre><code>## 
+##      Balanced one-way analysis of variance power calculation 
+## 
+##               k = 5
+##               n = 77.98047
+##               f = 0.2
+##       sig.level = 0.05
+##           power = 0.9
+## 
+## NOTE: n is number in each group</code></pre>
+</div>
+<div id="b-a-medium-effect-size-0.5-1" class="section level4">
+<h4>b) a medium effect size (0.5)</h4>
+<pre class="r"><code>pwr.anova.test(k = 5, sig.level = .05, f = 0.5, power = 0.9)</code></pre>
+<pre><code>## 
+##      Balanced one-way analysis of variance power calculation 
+## 
+##               k = 5
+##               n = 13.31145
+##               f = 0.5
+##       sig.level = 0.05
+##           power = 0.9
+## 
+## NOTE: n is number in each group</code></pre>
+</div>
+<div id="c-a-large-effect-size-0.8" class="section level4">
+<h4>c) a large effect size (0.8)</h4>
+<pre class="r"><code>pwr.anova.test(k = 5, sig.level = .05, f = 0.8, power = 0.9)</code></pre>
+<pre><code>## 
+##      Balanced one-way analysis of variance power calculation 
+## 
+##               k = 5
+##               n = 5.853948
+##               f = 0.8
+##       sig.level = 0.05
+##           power = 0.9
+## 
+## NOTE: n is number in each group</code></pre>
+</div>
+<div id="d-tthe-power-when-40-subjects-are-enrolled" class="section level4">
+<h4>d) Tthe power when 40 subjects are enrolled?</h4>
+<pre class="r"><code>pwr.anova.test(n = 8, f = 0.8, sig.level = 0.05, k = 5)</code></pre>
+<pre><code>## 
+##      Balanced one-way analysis of variance power calculation 
+## 
+##               k = 5
+##               n = 8
+##               f = 0.8
+##       sig.level = 0.05
+##           power = 0.9793113
+## 
+## NOTE: n is number in each group</code></pre>
+</div>
+</div>
 
 
 
