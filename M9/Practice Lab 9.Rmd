@@ -1,0 +1,12 @@
+---
+title: "Practice Lab 9"
+author: "Sean Huvaya"
+date: "2024-03-19"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+library(pwr)
+```
+
+
