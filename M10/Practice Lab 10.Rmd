@@ -1,0 +1,72 @@
+---
+title: "Practice Lab 10"
+author: "Sean Huvaya"
+date: "2024-03-26"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(dplyr)
+```
+###	Loading the dataset 
+```{r}
+df <- read.csv("/Users/ktxdev/Documents/MS in AI/Computational Statistics and Probability/M10/Practice Lab 10.csv")
+```
+
+### Stratifying the sample population in tertiles of SBP
+```{r}
+df$SBP_tertiles <- ntile(df$SBP, 3)
+df$SBP_tertiles_factor <- factor(df$SBP_tertiles, levels = c(1:3), labels = c("Tertile1","Tertile2","Tertile3"))
+```
+
+### Comparing the age of subjects in the respective tertiles utilizing ANOVA
+```{r}
+anova_test <- aov(df$age ~ df$SBP_tertiles_factor)
+summary(anova_test)
+```
+
+### Stratifying the population in subjects younger that 35, between 35 and 65 and those older than 65 years
+```{r}
+df$age_cat <- NA
+df$age_cat[df$age < 35] <- 1
+df$age_cat[df$age >= 35 & df$age <= 65] <- 2
+df$age_cat[df$age > 65] <- 3
+df$age_cat_factor <- factor(df$age_cat, levels = c(1:3), labels = c("below35", "between35_65", "above65"))
+```
+
+###	Comparing the SBP (as a continuous variable) of subjects in the age categories utilizing ANOVA
+```{r}
+anova_test<-aov(df$SBP ~ df$age_cat_factor)
+summary(anova_test)
+```
+
+###	Building a contingency table displaying the counts of SBP tertiles and age categories
+```{r}
+SBP_age_table <- table(df$age_cat_factor, df$SBP_tertiles_factor)
+SBP_age_table
+```
+###	Testing for associations between these categories using the chi square test
+```{r}
+result <- chisq.test(SBP_age_table)
+result
+```
+#### Observed Values
+```{r}
+result$observed
+```
+#### Expected Values
+```{r}
+result$expected
+```
+#### Residuals Values
+```{r}
+result$residuals
+```
+###	Calculate relative risk to be in the highest tertile of SBP for the oldest in the dataset compared to those younger than 65 years
+```{r}
+risk_young <- sum(SBP_age_table[1:2, 3]) / sum(SBP_age_table[1:2, 1:3])
+risk_old <- sum(SBP_age_table[3, 3]) / sum(SBP_age_table[3, 1:3])
+relative_Risk <- risk_old / risk_young
+relative_Risk
+```
