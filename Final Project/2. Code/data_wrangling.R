@@ -64,5 +64,5 @@ data <- data %>% rename(
 )
 
 # Write data to csv
-file_name = "~/Developer/AIM-5002/Final Project/1. Data/data.csv"
+file_name <- "~/Developer/AIM-5002/Final Project/1. Data/data.csv"
 write.csv2(data, file_name, row.names = FALSE)
